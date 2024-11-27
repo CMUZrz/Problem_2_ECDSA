@@ -1,4 +1,4 @@
-# Reversing Python
+# ECDSA FORGERY
 
 - Namespace: picoctf/examples
 - ID: ECDSA
@@ -23,15 +23,18 @@ Connect to the program with netcat:
 The program's source code can be downloaded {{url_for("picker-I.py", "here")}}.
 
 1. Connect to the server at `$ nc {{server}} {{port}}`
-2. Receive a public key and instructions to sign the message 'CTF_CHALLENGE'
-3. Generate a valid ECDSA signature 
-4. Submit the signature to  `$ nc {{server}} {{port}}`
-5. If the signature is valid, receive the flag
+2. Play the game and generate a valid ECDSA signature 
+3. Submit the signature to  `$ nc {{server}} {{port}}`
+4. If the signature is valid, you win a flag!
 
 
 
 
 ## Hints
+
+
+* The Nonce is fixed!
+* It uses a weak curve (NIST192p) for key generation.
 
 * In ECDSA, a signature (r, s) for a message m is generated using the following equation:
 
@@ -47,9 +50,21 @@ Where:
 * Look at this mathematically before you try to brute force something!
 
 
-## Solution Overview
+## Solution Overview ()
 
-Enter 'win' as the input to the program
+s =K^-1(z + xr) mod n
+
+where: 
+* k is nonce
+* z is the hash
+* x is the private key 
+* n is the order of the curve 
+
+s_1- s_2= k^(-1)(z_1-z_2) mod n 
+
+k = (z1 - z2) * (s1 - s2)^(-1) mod n 
+
+
 
 ## Challenge Options
 
