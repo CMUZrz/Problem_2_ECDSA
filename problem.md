@@ -84,6 +84,5 @@ Examining source code to identify functionality
 
 ## Attributes
 
-- author: LT 'syreal' Jones
-- organization: picoCTF
-- event: picoCTF Problem Developer Training
+- author: Zachary Zdobinski organization: CMU
+- event: N/A
