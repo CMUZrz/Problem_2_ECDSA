@@ -32,6 +32,6 @@ through a port. The goal is to forge an elliptic curve digital signature. This p
    of the source for the service being run on the container.
 
 5. [solver.py] solves via the parameters supplied via the challenge: 
-* example :python solver.py <curve_name> <order> <message1> <signature1> <message2> <signature2> <challenge_message>
+* example :python solver.py -curve_name -order -message1 -signature1 -message2 -signature2 -challenge_message
 6. [concept.ipynb] This is a notebook containing my notes to keep track of how the original problem was structured based on some notes on ECDSA and forging via a fixed nonce
 
