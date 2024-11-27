@@ -16,11 +16,7 @@ There is a service accepting input using elliptic curve based digital signature.
 
 ## Details
 
-Connect to the program with netcat:
 
-
-
-The program's source code can be downloaded {{url_for("picker-I.py", "here")}}.
 
 1. Connect to the server at `$ nc {{server}} {{port}}`
 2. Play the game and generate a valid ECDSA signature 
